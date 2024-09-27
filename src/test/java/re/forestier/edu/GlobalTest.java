@@ -23,4 +23,26 @@ public class GlobalTest {
 
         verify(Affichage.afficherJoueur(player));
     }
+
+    @Test
+    void testAffichageBase2() {
+        player player = new player("Florian", "Gnognak le Barbare", "ADVENTURER", 200, new ArrayList<>());
+        UpdatePlayer.addXp(player, 30);
+        UpdatePlayer.addXp(player, 55);
+        UpdatePlayer.addXp(player, 70);
+        player.getXp();
+        player.inventory = new ArrayList<>();
+
+        verify(Affichage.afficherJoueur(player));
+    }
+
+    @Test
+    void testAffichageBase3() {
+        player player = new player("Florian", "Gnognak le Barbare", "ADVENTURER", 200, new ArrayList<>());
+        UpdatePlayer.addXp(player, 20);
+        player.inventory = new ArrayList<>();
+        player.inventory.add("abdelali ichou"); // add element to the list so the for each can be reached in the Affichage class
+
+        verify(Affichage.afficherJoueur(player));
+    }
 }

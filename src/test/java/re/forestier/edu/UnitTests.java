@@ -14,6 +14,7 @@ public class UnitTests {
     @DisplayName("Sample test")
     void testPlayerName() {
         player player = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
+        player p1 = new player("","","",0,new ArrayList<>());
         assertThat(player.playerName, is("Florian"));
     }
 
@@ -23,7 +24,9 @@ public class UnitTests {
         player p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
 
         try {
-            p.removeMoney(200);
+            p.removeMoney(20); // the right test
+            p.addMoney(20); // the right test
+            p.removeMoney(200); // the false test
         } catch (IllegalArgumentException e) {
             return;
         }
