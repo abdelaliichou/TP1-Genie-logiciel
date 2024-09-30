@@ -122,13 +122,13 @@ import java.util.Random;
 
     // majFinDeTour met à jour les points de vie
     public static void majFinDeTour(player player) {
-<span class="nc bnc" id="L125" title="All 2 branches missed.">        if(player.currenthealthpoints == 0) {</span>
+<span class="pc bpc" id="L125" title="1 of 2 branches missed.">        if(player.currenthealthpoints == 0) {</span>
 <span class="nc" id="L126">            System.out.println(&quot;Le joueur est KO !&quot;);</span>
 <span class="nc" id="L127">            return;</span>
         }
 
-<span class="nc bnc" id="L130" title="All 2 branches missed.">        if(player.currenthealthpoints &lt; player.healthpoints/2) {</span>
-<span class="nc bnc" id="L131" title="All 2 branches missed.">            if(!player.getAvatarClass().equals(&quot;ADVENTURER&quot;)) {</span>
+<span class="pc bpc" id="L130" title="1 of 2 branches missed.">        if(player.currenthealthpoints &lt; player.healthpoints/2) {</span>
+<span class="pc bpc" id="L131" title="1 of 2 branches missed.">            if(!player.getAvatarClass().equals(&quot;ADVENTURER&quot;)) {</span>
 <span class="nc bnc" id="L132" title="All 2 branches missed.">                if(player.getAvatarClass().equals(&quot;DWARF&quot;)) {</span>
 <span class="nc bnc" id="L133" title="All 2 branches missed.">                    if(player.inventory.contains(&quot;Holy Elixir&quot;)) {</span>
 <span class="nc" id="L134">                        player.currenthealthpoints+=1;</span>
@@ -146,9 +146,9 @@ import java.util.Random;
                     }
                 }
             } else {
-<span class="nc" id="L149">                player.currenthealthpoints+=2;</span>
-<span class="nc bnc" id="L150" title="All 2 branches missed.">                if(player.retrieveLevel() &lt; 3) {</span>
-<span class="nc" id="L151">                    player.currenthealthpoints-=1;</span>
+<span class="fc" id="L149">                player.currenthealthpoints+=2;</span>
+<span class="pc bpc" id="L150" title="1 of 2 branches missed.">                if(player.retrieveLevel() &lt; 3) {</span>
+<span class="fc" id="L151">                    player.currenthealthpoints-=1;</span>
                 }
             }
 <span class="nc bnc" id="L154" title="All 2 branches missed.">        } else if(player.currenthealthpoints &gt;= player.healthpoints/2){</span>
@@ -159,9 +159,9 @@ import java.util.Random;
         }
 
 
-<span class="nc bnc" id="L162" title="All 2 branches missed.">        if(player.currenthealthpoints &gt;= player.healthpoints) {</span>
-<span class="nc" id="L163">            player.currenthealthpoints = player.healthpoints;</span>
+<span class="pc bpc" id="L162" title="1 of 2 branches missed.">        if(player.currenthealthpoints &gt;= player.healthpoints) {</span>
+<span class="fc" id="L163">            player.currenthealthpoints = player.healthpoints;</span>
         }
-<span class="nc" id="L165">    }</span>
+<span class="fc" id="L165">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

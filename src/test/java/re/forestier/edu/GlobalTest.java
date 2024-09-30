@@ -18,7 +18,12 @@ public class GlobalTest {
     @Test
     void testAffichageBase() {
         player player = new player("Florian", "Gnognak le Barbare", "ADVENTURER", 200, new ArrayList<>());
+        player.currenthealthpoints = player.healthpoints/2 -1 ;
         UpdatePlayer.addXp(player, 20);
+        UpdatePlayer.majFinDeTour(player);
+
+        player.currenthealthpoints = player.healthpoints/2 +1;
+
         player.inventory = new ArrayList<>();
 
         verify(Affichage.afficherJoueur(player));

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="re.forestier.edu.GlobalTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-09-27T15:37:31" hostname="abdelali-Latitude-7280" time="0.332">
+<testsuite name="re.forestier.edu.GlobalTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-09-30T08:43:31" hostname="abdelali-Latitude-7280" time="0.309">
   <properties/>
-  <testcase name="testAffichageBase()" classname="re.forestier.edu.GlobalTest" time="0.242"/>
-  <testcase name="testAffichageBase2()" classname="re.forestier.edu.GlobalTest" time="0.045"/>
-  <testcase name="testAffichageBase3()" classname="re.forestier.edu.GlobalTest" time="0.041"/>
+  <testcase name="testAffichageBase()" classname="re.forestier.edu.GlobalTest" time="0.233"/>
+  <testcase name="testAffichageBase2()" classname="re.forestier.edu.GlobalTest" time="0.043"/>
+  <testcase name="testAffichageBase3()" classname="re.forestier.edu.GlobalTest" time="0.03"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
