@@ -34,7 +34,7 @@ public class GlobalTest {
         player player = new player("Florian", "Gnognak le Barbare", "ADVENTURER", 200, new ArrayList<>());
         UpdatePlayer.addXp(player, 30);
         UpdatePlayer.addXp(player, 55);
-        UpdatePlayer.addXp(player, 70);
+        UpdatePlayer.addXp(player, 50);
         player.getXp();
         player.inventory = new ArrayList<>();
 

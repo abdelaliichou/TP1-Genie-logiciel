@@ -123,37 +123,32 @@ public class UpdatePlayer {
     // majFinDeTour met à jour les points de vie
     public static void majFinDeTour(player player) {
 
-        if(player.currenthealthpoints == 0) {
+        if (player.currenthealthpoints == 0) {
             System.out.println("Le joueur est KO !");
             return;
         }
 
-        if(player.currenthealthpoints < player.healthpoints/2) {
+        if (player.currenthealthpoints < player.healthpoints/2) {
 
-            if(player.getAvatarClass().equals("DWARF")) {
-                player.currenthealthpoints+=1;
-                if(player.inventory.contains("Holy Elixir")) {
-                    player.currenthealthpoints+=1;
-                }
+            String Avatar_tmp = player.getAvatarClass();
+            int bonusHealth = 0;
+
+            switch (Avatar_tmp){
+                case "DWARF", "ARCHER":
+                    bonusHealth += 1;
+                    if (player.inventory.contains("Holy Elixir")) bonusHealth += 1;
+                    if (player.inventory.contains("Magic Bow")) bonusHealth += (player.currenthealthpoints/8) - 1;
+                    break;
+                case "ADVENTURER":
+                    bonusHealth += 2;
+                    if (player.retrieveLevel() < 3) bonusHealth -= 1;
+                    break;
             }
 
-            else if(player.getAvatarClass().equals("ARCHER")) {
-                player.currenthealthpoints+=1;
-                if(player.inventory.contains("Magic Bow")) {
-                    player.currenthealthpoints+=player.currenthealthpoints/8-1;
-                }
-            }
-
-            else {  // player.getAvatarClass().equals("ADVENTURER")
-                player.currenthealthpoints+=2;
-                if(player.retrieveLevel() < 3) {
-                    player.currenthealthpoints-=1;
-                }
-            }
-
+            player.currenthealthpoints += bonusHealth;
         }
 
-        if(player.currenthealthpoints >= player.healthpoints) {
+        if (player.currenthealthpoints >= player.healthpoints) {
             player.currenthealthpoints = player.healthpoints;
         }
     }

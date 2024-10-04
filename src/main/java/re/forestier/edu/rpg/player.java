@@ -14,6 +14,11 @@ public class player {
     public int currenthealthpoints;
     protected int xp;
 
+    private final int LEVEL1 = 10;
+    private final int LEVEL2 = 27;
+    private final int LEVEL3 = 57;
+    private final int LEVEL4 = 111;
+
     protected HashMap<Integer, Integer> levels = new HashMap<>();
     public HashMap<String, Integer> abilities;
     public ArrayList<String> inventory;
@@ -58,10 +63,10 @@ public class player {
     }
 
     private int niveau(){
-        if (this.xp < this.levels.get(2)) return 1;
-        if (this.xp < this.levels.get(3)) return 2;
-        if (this.xp < this.levels.get(4)) return 3;
-        if (this.xp < this.levels.get(5)) return 4;
+        if (xp < LEVEL1) return 1;
+        if (xp < LEVEL2) return 2;
+        if (xp < LEVEL3) return 3;
+        if (xp < LEVEL4) return 4;
         return 5;
     }
 
