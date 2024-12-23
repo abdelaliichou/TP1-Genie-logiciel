@@ -19,7 +19,14 @@ public class player {
     private final int LEVEL3 = 57;
     private final int LEVEL4 = 111;
 
-    protected HashMap<Integer, Integer> levels = new HashMap<>();
+    protected HashMap<Integer, Integer> levels = new HashMap<>(){{
+        // (lvl-1) * 10 + round((lvl * xplvl-1)/4)
+        put(2, LEVEL1); // 1*10 + ((2*0)/4)
+        put(3, LEVEL2); // 2*10 + ((3*10)/4)
+        put(4, LEVEL3); // 3*10 + ((4*27)/4)
+        put(5, LEVEL4); // 4*10 + ((5*57)/4)
+    }};
+
     public HashMap<String, Integer> abilities;
     public ArrayList<String> inventory;
 
@@ -36,9 +43,7 @@ public class player {
         this.inventory = inventory;
         this.abilities = UpdatePlayer.abilitiesPerTypeAndLevel().get(AvatarClass).get(1);
 
-        // setting levels her instead of inside the retrieveLevel function
-        settingLevels();
-
+        // setting levels in directly in the top in the initialization of the levels hashmap
     }
 
     public void removeMoney(int amount) throws IllegalArgumentException {
@@ -48,14 +53,6 @@ public class player {
 
     public void addMoney(int amount) {
         if (Integer.valueOf(amount) != null) money += amount;
-    }
-
-    private void settingLevels(){
-        // (lvl-1) * 10 + round((lvl * xplvl-1)/4)
-        levels.put(2,10); // 1*10 + ((2*0)/4)
-        levels.put(3,27); // 2*10 + ((3*10)/4)
-        levels.put(4,57); // 3*10 + ((4*27)/4)
-        levels.put(5,111); // 4*10 + ((5*57)/4)
     }
 
     public int retrieveLevel() {

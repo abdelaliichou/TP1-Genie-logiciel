@@ -20,7 +20,14 @@ public class GlobalTest {
         player player = new player("Florian", "Gnognak le Barbare", "ADVENTURER", 200, new ArrayList<>());
         player.currenthealthpoints = player.healthpoints/2 -1 ;
         UpdatePlayer.addXp(player, 20);
+        player.currenthealthpoints = 0;
         UpdatePlayer.majFinDeTour(player);
+
+        player.currenthealthpoints = player.healthpoints/2 -1 ;
+        UpdatePlayer.majFinDeTour(player);
+
+        player p1 = new player("Florian", "Gnognak le Barbare", "DWARF", 200, new ArrayList<>());
+
 
         player.currenthealthpoints = player.healthpoints/2 +1;
 

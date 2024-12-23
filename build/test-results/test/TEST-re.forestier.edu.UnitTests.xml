@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="re.forestier.edu.UnitTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-10-04T10:50:52" hostname="abdelali-Latitude-7280" time="0.014">
+<testsuite name="re.forestier.edu.UnitTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-10-14T09:15:27" hostname="abdelali-Latitude-7280" time="0.015">
   <properties/>
   <testcase name="Impossible to have negative money" classname="re.forestier.edu.UnitTests" time="0.002"/>
   <testcase name="Sample test" classname="re.forestier.edu.UnitTests" time="0.011"/>
