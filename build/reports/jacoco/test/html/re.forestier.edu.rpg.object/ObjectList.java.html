@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ObjectList.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">kata</a> &gt; <a href="index.source.html" class="el_package">re.forestier.edu.rpg.object</a> &gt; <span class="el_source">ObjectList.java</span></div><h1>ObjectList.java</h1><pre class="source lang-java linenums">package re.forestier.edu.rpg.object;
+
+import java.util.*;
+
+<span class="nc" id="L5">public class ObjectList {</span>
+
+<span class="nc" id="L7">    private static final Map&lt;String, RpgObject&gt; objectMap = new HashMap&lt;&gt;();</span>
+
+    static {
+<span class="nc" id="L10">        objectMap.put(&quot;Lookout Ring&quot;, new RpgObject(&quot;Lookout Ring&quot;, &quot;Prevents surprise attacks&quot;, 1, 50));</span>
+<span class="nc" id="L11">        objectMap.put(&quot;Scroll of Stupidity&quot;, new RpgObject(&quot;Scroll of Stupidity&quot;, &quot;INT-2 when applied to an enemy&quot;, 0, 10));</span>
+<span class="nc" id="L12">        objectMap.put(&quot;Draupnir&quot;, new RpgObject(&quot;Draupnir&quot;, &quot;Increases XP gained by 100%&quot;, 2, 100));</span>
+<span class="nc" id="L13">        objectMap.put(&quot;Magic Charm&quot;, new RpgObject(&quot;Magic Charm&quot;, &quot;Magic +10 for 5 rounds&quot;, 3, 150));</span>
+<span class="nc" id="L14">        objectMap.put(&quot;Rune Staff of Curse&quot;, new RpgObject(&quot;Rune Staff of Curse&quot;, &quot;May burn your enemies... Or yourself. Who knows?&quot;, 3, 200));</span>
+<span class="nc" id="L15">        objectMap.put(&quot;Combat Edge&quot;, new RpgObject(&quot;Combat Edge&quot;, &quot;Well, that's an edge&quot;, 1, 30));</span>
+<span class="nc" id="L16">        objectMap.put(&quot;Holy Elixir&quot;, new RpgObject(&quot;Holy Elixir&quot;, &quot;Recover your HP&quot;, 2, 75));</span>
+<span class="nc" id="L17">        objectMap.put(&quot;Magic Bow&quot;, new RpgObject(&quot;Magic Bow&quot;, &quot;Attack very far enemies&quot;, 2, 75));</span>
+
+    }
+
+    public static RpgObject getObject(String name) {
+<span class="nc" id="L22">        return objectMap.get(name);</span>
+    }
+
+    public static Map&lt;String, RpgObject&gt; getObjectList() {
+<span class="nc" id="L26">        return objectMap;</span>
+    }
+
+    public static boolean contains(String name) {
+<span class="nc" id="L30">        return objectMap.containsKey(name);</span>
+    }
+
+<span class="nc" id="L33">    private static final Random RANDOM = new Random();</span>
+    public static RpgObject getRandomObject(int maxWeight) {
+<span class="nc" id="L35">        List&lt;RpgObject&gt; availableObjects = new ArrayList&lt;&gt;();</span>
+
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        for (RpgObject obj : objectMap.values()) {</span>
+<span class="nc bnc" id="L38" title="All 2 branches missed.">            if (obj.getWeight() &lt; maxWeight) {</span>
+<span class="nc" id="L39">                availableObjects.add(obj);</span>
+            }
+<span class="nc" id="L41">        }</span>
+<span class="nc bnc" id="L42" title="All 2 branches missed.">        if (availableObjects.isEmpty()) {</span>
+<span class="nc" id="L43">            return null;</span>
+        }
+
+<span class="nc" id="L46">        return availableObjects.get(RANDOM.nextInt(availableObjects.size()));</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

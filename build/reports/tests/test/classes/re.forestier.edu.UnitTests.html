@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">2</div>
+<div class="counter">48</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.013s</div>
+<div class="counter">0.329s</div>
 <p>duration</p>
 </div>
 </td>
@@ -76,15 +76,291 @@
 </tr>
 </thead>
 <tr>
+<td class="success">add money</td>
+<td class="success">testAddMoney()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test adding a non-existent object</td>
+<td class="success">testAddNonExistentObject()</td>
+<td class="success">0.015s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test Adding Objects to Inventory</td>
+<td class="success">testAddObject()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test adding an object that exceeds the free weight</td>
+<td class="success">testAddObjectExceedsWeight()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test Adding Unknown Object</td>
+<td class="success">testAddUnknownObject()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">update xp</td>
+<td class="success">testAddXP()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">update xp and level up</td>
+<td class="success">testAddXPLevelUp()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">update xp and no level up</td>
+<td class="success">testAddXPNoLevelUp()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">update inventory after leveling up</td>
+<td class="success">testAddXp_InventoryUpdate()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testAddXp_LevelUp()</td>
+<td class="success">testAddXp_LevelUp()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test clearing inventory</td>
+<td class="success">testClearInventory()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test objectlist.contains</td>
+<td class="success">testContains()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test Contains Method for Non-Existing Items</td>
+<td class="success">testContainsFalse()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">MAJ fin tour : current health doesnt change</td>
+<td class="success">testCurrentHealthDoesNotChange()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">MAJ fin tour Mutation : current health doesnt change</td>
+<td class="success">testCurrentHealthDoesNotChangeMutation()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">MAJ fin tour : current health must be inf or equal to health</td>
+<td class="success">testCurrentHealthInfEquToHealth()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">test existing avatar classes</td>
+<td class="success">testExistingAvatar()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test Goblin Abilities at each Level</td>
+<td class="success">testGetAbilitiesLevel1()</td>
+<td class="success">0.011s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test calculating the free weight in the inventory</td>
+<td class="success">testGetFreeWeight()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test retrieving  maximum weight</td>
+<td class="success">testGetMaxWeight()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test get object</td>
+<td class="success">testGetObjectByName()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test get Nonexistent object</td>
+<td class="success">testGetObjectByNameNotFound()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">random object's weight should be inf or eq to given weight</td>
+<td class="success">testGetRandomObject()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Object should be null when no objects fit the weight condition</td>
+<td class="success">testGetRandomObjectNoMatching()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test Calculating Total Value of Inventory</td>
+<td class="success">testGetTotalValue()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test Calculating Total Weight of Inventory</td>
+<td class="success">testGetTotalWeight()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">MAJ fin tour : Adventurer with high level</td>
+<td class="success">testMAJFinAdventurerHighLevel()</td>
+<td class="success">0.014s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">MAJ fin tour : Adventurer with low level</td>
+<td class="success">testMAJFinAdventurerLowLevel()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">MAJ fin tour : ARCHER with Magic Bow</td>
+<td class="success">testMAJFinArcherMagicBow()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">MAJ fin tour : ARCHER with No Magic Bow</td>
+<td class="success">testMAJFinArcherNoMagicBow()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">MAJ fin tour : Dwarf with holy elexir</td>
+<td class="success">testMAJFinDwarfHolyElexir()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">MAJ fin tour : Dwarf with no holy elexir</td>
+<td class="success">testMAJFinDwarfNoHolyElexir()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">player KO</td>
+<td class="success">testMajFinDeTour_PlayerKO()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">Impossible to have negative money</td>
 <td class="success">testNegativeMoney()</td>
+<td class="success">0.024s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test Object class getters</td>
+<td class="success">testObjectGetters()</td>
 <td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Sample test</td>
 <td class="success">testPlayerName()</td>
-<td class="success">0.011s</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testRemoveAllMoney()</td>
+<td class="success">testRemoveAllMoney()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">remove money</td>
+<td class="success">testRemoveMoney()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test Removing Non-Existent Object from Inventory</td>
+<td class="success">testRemoveNonExistentObject()</td>
+<td class="success">0.025s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test Removing Object from Inventory</td>
+<td class="success">testRemoveObject()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">retrieve the right level</td>
+<td class="success">testRetrieveRightLevel()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">retrieve the right level fixed</td>
+<td class="success">testRetrieveRightLevelFixed()</td>
+<td class="success">0.085s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test: Buyer does not have enough money</td>
+<td class="success">testSellObjectBuyerLacksMoney()</td>
+<td class="success">0.024s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test: Buyer does not have enough free weight</td>
+<td class="success">testSellObjectBuyerLacksWeight()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test: Seller does not own the object</td>
+<td class="success">testSellObjectSellerDoesNotOwn()</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Test: Successfully selling an object</td>
+<td class="success">testSellObjectSuccess()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">test unknown avatar class</td>
+<td class="success">testUnknownAvatar()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testprintPlayerInventory()</td>
+<td class="success">testprintPlayerInventory()</td>
+<td class="success">0.007s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -97,7 +373,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.5</a> at Oct 14, 2024, 11:15:27 AM</p>
+<a href="http://www.gradle.org">Gradle 8.5</a> at Dec 23, 2024, 3:09:14 PM</p>
 </div>
 </div>
 </body>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Display.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">kata</a> &gt; <a href="index.source.html" class="el_package">re.forestier.edu.rpg.utils</a> &gt; <span class="el_source">Display.java</span></div><h1>Display.java</h1><pre class="source lang-java linenums">package re.forestier.edu.rpg.utils;
+
+import re.forestier.edu.rpg.Player;
+import re.forestier.edu.rpg.object.RpgObject;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
+<span class="nc" id="L10">public class Display {</span>
+
+<span class="nc" id="L12">    private static final List&lt;String&gt; ABILITY_ORDER = Arrays.asList(&quot;DEF&quot;, &quot;VIS&quot;, &quot;ATK&quot;, &quot;CHA&quot;, &quot;INT&quot;, &quot;ALC&quot;);</span>
+
+    public static String printPlayer(Player player) {
+<span class="nc" id="L15">        StringBuilder finalString = new StringBuilder();</span>
+
+<span class="nc" id="L17">        appendPlayerDetails(finalString, player);</span>
+<span class="nc" id="L18">        appendAbilities(finalString, player);</span>
+<span class="nc" id="L19">        appendInventory(finalString, player);</span>
+
+<span class="nc" id="L21">        return finalString.toString();</span>
+    }
+
+    public static String printPlayerInMarkDown(Player player) {
+<span class="nc" id="L25">        StringBuilder profile = new StringBuilder();</span>
+
+<span class="nc" id="L27">        appendHeader(profile, player);</span>
+<span class="nc" id="L28">        appendLine(profile);</span>
+<span class="nc" id="L29">        appendPlayerStatus(profile, player);</span>
+<span class="nc" id="L30">        appendLine(profile);</span>
+<span class="nc" id="L31">        appendStats(profile, player);</span>
+<span class="nc" id="L32">        appendLine(profile);</span>
+<span class="nc" id="L33">        appendInventoryStatus(profile, player);</span>
+<span class="nc" id="L34">        appendFooter(profile);</span>
+
+<span class="nc" id="L36">        return profile.toString();</span>
+    }
+
+    private static void appendPlayerDetails(StringBuilder finalString, Player player) {
+<span class="nc" id="L40">        finalString.append(String.format(&quot;Joueur %s joué par %s&quot;, player.getAvatarName(), player.getPlayerName()))</span>
+<span class="nc" id="L41">                .append(&quot;\nNiveau : &quot;).append(player.retrieveLevel())</span>
+<span class="nc" id="L42">                .append(&quot; (XP totale : &quot;).append(player.getXp()).append(&quot;)\n\nCapacités :&quot;);</span>
+<span class="nc" id="L43">    }</span>
+
+    private static void appendAbilities(StringBuilder finalString, Player player) {
+<span class="nc" id="L46">        ABILITY_ORDER.stream()</span>
+<span class="nc" id="L47">                .filter(ability -&gt; player.getAbilities().containsKey(ability)) </span>
+<span class="nc" id="L48">                .forEach(ability -&gt; finalString.append(&quot;\n   &quot;).append(ability).append(&quot; : &quot;).append(player.getAbilities().get(ability)));</span>
+<span class="nc" id="L49">    }</span>
+
+    private static void appendInventory(StringBuilder finalString, Player player) {
+<span class="nc" id="L52">        finalString.append(&quot;\n\nInventaire :&quot;);</span>
+<span class="nc" id="L53">        player.getInventory().getObjects().forEach(item -&gt; {</span>
+<span class="nc" id="L54">            finalString.append(&quot;\n   &quot;).append(((RpgObject) item).getName());</span>
+<span class="nc" id="L55">    });</span>
+<span class="nc" id="L56">    }</span>
+
+    private static void appendHeader(StringBuilder profile, Player player) {
+<span class="nc" id="L59">        profile.append(&quot;## ============= PLAYER PROFILE =============  \n&quot;)</span>
+<span class="nc" id="L60">                .append(&quot;**+ Name:** &quot;).append(player.getPlayerName()).append(&quot;  \n&quot;)</span>
+<span class="nc" id="L61">                .append(&quot;**+ Controlled By:** &quot;).append(player.getAvatarName()).append(&quot;  \n&quot;)</span>
+<span class="nc" id="L62">                .append(&quot;**+ Class:** &quot;).append(player.getAvatarClass()).append(&quot;  \n&quot;);</span>
+<span class="nc" id="L63">    }</span>
+
+    private static void appendPlayerStatus(StringBuilder profile, Player player) {
+<span class="nc" id="L66">        profile.append(&quot;**+ LEVEL:** &quot;).append(player.retrieveLevel()).append(&quot;  \n&quot;)</span>
+<span class="nc" id="L67">                .append(&quot;**+ MONEY:** &quot;).append(player.getMoney()).append(&quot; Coins  \n&quot;)</span>
+<span class="nc" id="L68">                .append(&quot;**+ XP:** &quot;).append(player.getXp()).append(&quot;  \n&quot;)</span>
+<span class="nc" id="L69">                .append(&quot;**+ HEALTH:** &quot;).append(player.getCurrentHealthPoints()).append(&quot;/&quot;)</span>
+<span class="nc" id="L70">                .append(player.getHealthPoints()).append(&quot; HP  \n&quot;);</span>
+<span class="nc" id="L71">    }</span>
+
+    private static void appendLine(StringBuilder profile){
+<span class="nc" id="L74">        profile.append(&quot;# -------------------------------------------  \n&quot;);</span>
+<span class="nc" id="L75">    }</span>
+
+    private static void appendStats(StringBuilder profile, Player player) {
+<span class="nc" id="L78">        profile.append(&quot;**+ STATS:**  \n&quot;);</span>
+<span class="nc" id="L79">        Map&lt;String, Integer&gt; stats = player.getAbilities();</span>
+<span class="nc" id="L80">        stats.forEach((key, value) -&gt; {</span>
+<span class="nc" id="L81">            profile.append(&quot;- **[&quot;).append(key).append(&quot;]** : &quot;).append(value).append(&quot;  \n&quot;);</span>
+<span class="nc" id="L82">        });</span>
+<span class="nc" id="L83">    }</span>
+
+    private static void appendInventoryStatus(StringBuilder profile, Player player) {
+<span class="nc" id="L86">        profile.append(&quot;**+ INVENTORY STATUS:** &quot;).append(player.getInventory().getTotalWeight())</span>
+<span class="nc" id="L87">                .append(&quot;/&quot;).append(player.getMaxWeight()).append(&quot; kg  \n&quot;)</span>
+<span class="nc" id="L88">                .append(&quot;**+ ITEMS HELD:**  \n&quot;);</span>
+<span class="nc" id="L89">        player.getInventory().getObjects().forEach(item -&gt; {</span>
+<span class="nc" id="L90">            profile.append(&quot;- &quot;).append(item.getName()).append(&quot;  \n&quot;);</span>
+<span class="nc" id="L91">        });</span>
+<span class="nc" id="L92">    }</span>
+
+    private static void appendFooter(StringBuilder profile) {
+<span class="nc" id="L95">        profile.append(&quot;## =========================================  \n&quot;);</span>
+<span class="nc" id="L96">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

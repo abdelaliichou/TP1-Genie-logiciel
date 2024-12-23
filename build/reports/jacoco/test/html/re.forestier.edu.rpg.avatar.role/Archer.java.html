@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Archer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">kata</a> &gt; <a href="index.source.html" class="el_package">re.forestier.edu.rpg.avatar.role</a> &gt; <span class="el_source">Archer.java</span></div><h1>Archer.java</h1><pre class="source lang-java linenums">package re.forestier.edu.rpg.avatar.role;
+
+import re.forestier.edu.rpg.Player;
+import re.forestier.edu.rpg.avatar.AvatarClass;
+
+import java.util.Map;
+
+<span class="nc" id="L8">public class Archer implements AvatarClass  {</span>
+
+    @Override
+    public String getName() {
+<span class="nc" id="L12">        return &quot;ARCHER&quot;;</span>
+    }
+
+    @Override
+    public Map&lt;Integer, Map&lt;String, Integer&gt;&gt; getAbilitiesPerLevel() {
+<span class="nc" id="L17">        return Map.of(</span>
+<span class="nc" id="L18">            1, Map.of(&quot;INT&quot;, 1, &quot;ATK&quot;, 3, &quot;CHA&quot;, 1, &quot;VIS&quot;, 3),</span>
+<span class="nc" id="L19">            2, Map.of(&quot;DEF&quot;, 1, &quot;CHA&quot;, 2),</span>
+<span class="nc" id="L20">            3, Map.of(&quot;ATK&quot;, 3),</span>
+<span class="nc" id="L21">            4, Map.of(&quot;DEF&quot;, 2),</span>
+<span class="nc" id="L22">            5, Map.of(&quot;ATK&quot;, 4)</span>
+        );
+    }
+
+    @Override
+    public  void applyHealthBonus(Player player) {
+<span class="nc" id="L28">        int points = player.getCurrentHealthPoints();</span>
+<span class="nc" id="L29">        points += 1;</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">        if(player.getInventory().contains(&quot;Magic Bow&quot;))</span>
+<span class="nc" id="L31">            points += (points / 8) - 1;</span>
+<span class="nc" id="L32">        player.setCurrentHealthPoints(points);</span>
+<span class="nc" id="L33">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

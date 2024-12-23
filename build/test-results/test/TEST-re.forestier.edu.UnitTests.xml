@@ -1,8 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="re.forestier.edu.UnitTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-10-14T09:15:27" hostname="abdelali-Latitude-7280" time="0.015">
+<testsuite name="re.forestier.edu.UnitTests" tests="48" skipped="0" failures="0" errors="0" timestamp="2024-12-23T14:09:14" hostname="abdelali-Latitude-7280" time="0.418">
   <properties/>
-  <testcase name="Impossible to have negative money" classname="re.forestier.edu.UnitTests" time="0.002"/>
-  <testcase name="Sample test" classname="re.forestier.edu.UnitTests" time="0.011"/>
+  <testcase name="retrieve the right level fixed" classname="re.forestier.edu.UnitTests" time="0.085"/>
+  <testcase name="MAJ fin tour : ARCHER with No Magic Bow" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="test existing avatar classes" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="Test: Buyer does not have enough money" classname="re.forestier.edu.UnitTests" time="0.024"/>
+  <testcase name="update xp and level up" classname="re.forestier.edu.UnitTests" time="0.003"/>
+  <testcase name="MAJ fin tour : Adventurer with low level" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="Test adding a non-existent object" classname="re.forestier.edu.UnitTests" time="0.015"/>
+  <testcase name="update xp and no level up" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="Test Object class getters" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="Test get Nonexistent object" classname="re.forestier.edu.UnitTests" time="0.003"/>
+  <testcase name="update inventory after leveling up" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="MAJ fin tour : Dwarf with no holy elexir" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="MAJ fin tour : Dwarf with holy elexir" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="update xp" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="test unknown avatar class" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="testRemoveAllMoney()" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="remove money" classname="re.forestier.edu.UnitTests" time="0.003"/>
+  <testcase name="testAddXp_LevelUp()" classname="re.forestier.edu.UnitTests" time="0.004"/>
+  <testcase name="MAJ fin tour : current health doesnt change" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="Test: Successfully selling an object" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="MAJ fin tour : current health must be inf or equal to health" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="Test adding an object that exceeds the free weight" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="add money" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="Test clearing inventory" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="testprintPlayerInventory()" classname="re.forestier.edu.UnitTests" time="0.007"/>
+  <testcase name="MAJ fin tour : ARCHER with Magic Bow" classname="re.forestier.edu.UnitTests" time="0.003"/>
+  <testcase name="Test get object" classname="re.forestier.edu.UnitTests" time="0.003"/>
+  <testcase name="Test Goblin Abilities at each Level" classname="re.forestier.edu.UnitTests" time="0.011"/>
+  <testcase name="player KO" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="Test Contains Method for Non-Existing Items" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="Test Removing Object from Inventory" classname="re.forestier.edu.UnitTests" time="0.003"/>
+  <testcase name="MAJ fin tour Mutation : current health doesnt change" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="Test objectlist.contains" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="Test Adding Unknown Object" classname="re.forestier.edu.UnitTests" time="0.003"/>
+  <testcase name="Test Adding Objects to Inventory" classname="re.forestier.edu.UnitTests" time="0.001"/>
+  <testcase name="Test retrieving  maximum weight" classname="re.forestier.edu.UnitTests" time="0.002"/>
+  <testcase name="random object's weight should be inf or eq to given weight" classname="re.forestier.edu.UnitTests" time="0.003"/>
+  <testcase name="Test calculating the free weight in the inventory" classname="re.forestier.edu.UnitTests" time="0.004"/>
+  <testcase name="Object should be null when no objects fit the weight condition" classname="re.forestier.edu.UnitTests" time="0.004"/>
+  <testcase name="Test Calculating Total Value of Inventory" classname="re.forestier.edu.UnitTests" time="0.003"/>
+  <testcase name="Impossible to have negative money" classname="re.forestier.edu.UnitTests" time="0.024"/>
+  <testcase name="Test Removing Non-Existent Object from Inventory" classname="re.forestier.edu.UnitTests" time="0.025"/>
+  <testcase name="Sample test" classname="re.forestier.edu.UnitTests" time="0.01"/>
+  <testcase name="retrieve the right level" classname="re.forestier.edu.UnitTests" time="0.008"/>
+  <testcase name="Test: Seller does not own the object" classname="re.forestier.edu.UnitTests" time="0.01"/>
+  <testcase name="MAJ fin tour : Adventurer with high level" classname="re.forestier.edu.UnitTests" time="0.014"/>
+  <testcase name="Test Calculating Total Weight of Inventory" classname="re.forestier.edu.UnitTests" time="0.005"/>
+  <testcase name="Test: Buyer does not have enough free weight" classname="re.forestier.edu.UnitTests" time="0.007"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
